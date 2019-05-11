@@ -2,7 +2,7 @@
 
 outlines for algos
 
-Generating puzzles 
+# Generating puzzles 
 
   generate n numbers (n>=17) place in random place on board
   
@@ -17,7 +17,8 @@ Generating puzzles
     
     
   
-Solvable puzzles 
+  # Solvable puzzles
+  
   A solvable sudoku has exactly 1 solution 
   Start:
   Remove # board randomly
