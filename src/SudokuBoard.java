@@ -1,10 +1,10 @@
 
 public class SudokuBoard {
 
-	final int SIZE;
+	final int SIZE = 9;
 	
 	public SudokuBoard() {
-		SIZE = 0;
+
 		
 	}
 	
@@ -17,7 +17,7 @@ public class SudokuBoard {
 	}
 	
 	public int resolvePosition(Coordinates pos) {
-		return pos.getX() * SIZE + pos.getY();
+		return pos.getY() * SIZE + pos.getX();
 	}
 	
 	

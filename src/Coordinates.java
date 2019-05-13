@@ -1,8 +1,14 @@
 
 public class Coordinates {
 	private int x,y;
-	
-	public Coordinates(int x, int y) {
+
+
+	/**
+	 * Creates a Coordinate
+	 * @param y - The y coordinate
+	 * @param x - The x coordinate
+	 */
+	public Coordinates(int y, int x) {
 		this.x = x;
 		this.y = y;
 	}
