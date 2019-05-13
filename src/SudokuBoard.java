@@ -76,10 +76,8 @@ public class SudokuBoard {
 
 
 	public void generateStartingValues() {
-
-
 		Random rand = new Random();
-		int num = rand.nextInt(80);
+		int num = rand.nextInt(81);
 		int val = rand.nextInt(9) + 1;
 		if (sudokuCellList.get(num).getValue() == 0) {
 			if (isSafe(sudokuCellList.get(num), val)) {
