@@ -98,11 +98,33 @@ public class SudokuBoard {
 
 
 	public void printSudokuBoard(){
+		System.out.print("--------------------");
+		
 		for(int i=0;i<sudokuCellList.size();i++){
+			
+			if(i%3==0 && i!=0) {
+				System.out.print("|");
+				
+				/*if(i%9==0) {
+					System.out.print("---");
+				}//end if*/
+				
+				int step = 8;
+				for(int j=step;j<=8;j+=step) {
+					System.out.println();
+					System.out.print("---");
+				}//end for
+				
+			}//end if
+			
 			if(i%9==0){
 				System.out.println();
-			}
+			}//end if
+			
 			System.out.print(sudokuCellList.get(i).getValue() + " ");
 		}
+		System.out.print("|");
+		System.out.println();
+		System.out.print("--------------------");
 	}
 }
