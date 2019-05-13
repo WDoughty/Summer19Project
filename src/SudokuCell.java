@@ -40,4 +40,6 @@ public class SudokuCell {
 		neighbors = cells;
 	}
 
+
+
 }
