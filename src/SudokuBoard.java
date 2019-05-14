@@ -4,16 +4,17 @@ public class SudokuBoard {
 
 	final int SIZE = 9;
 	private SudokuBoard board;
-	private List<SudokuCell> sudokuCellList;
-	private int Solutions, blanks;
+	public List<SudokuCell> sudokuCellList;
+	public int Solutions;
 	private String start,end;
-
+	private List<SudokuCell> mixedList;
 	/**
 	 * Constructor
 	 * Creates a new Sudoku Board
 	 * Initialize the SudokuCellList with empty (0) values and assigns the neighbors to each cell
 	 */
 	public SudokuBoard() {
+		Solutions=0;
 		board = this;
 		sudokuCellList = new ArrayList<>();
 		for(int i = 0;i<9;i++){
@@ -36,6 +37,7 @@ public class SudokuBoard {
 	 * @param string Seed for new board
 	 */
 	public SudokuBoard(String string){
+		Solutions=0;
 		board = this;
 		sudokuCellList = new ArrayList<>();
 		for(int i =0;i<9;i++){
@@ -79,13 +81,13 @@ public class SudokuBoard {
 	 * If cell is empty (value of 0) then tries to place value in that cell.
 	 * @return boolean
 	 */
-	public boolean fillCell() {
+	public boolean fillCell(List<SudokuCell> sudokuCellList) {
 		for(int i=0; i<sudokuCellList.size();i++){
 			if(sudokuCellList.get(i).getValue() == 0){
 				for(int j=1;j<10; j++){
 						if(isSafe(sudokuCellList.get(i),j)){
 							sudokuCellList.get(i).setValue(j);
-							if(fillCell() == true){
+							if(fillCell(sudokuCellList) == true){
 								return true;
 							}
 							else{
@@ -113,7 +115,6 @@ public class SudokuBoard {
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -221,5 +222,6 @@ public class SudokuBoard {
 			sudokuCellList.get(i).setValue(0);
 		}
 	}
+
 }
 
