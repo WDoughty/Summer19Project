@@ -197,6 +197,13 @@ public class SudokuBoard {
 		return string;
 	}
 
+	public String[] splitStringInLists(String string){
+		String[] strArr = new String[9];
+		for(int i=0;i<string.length()/9;i++){
+			strArr[i] = string.substring(i*9,(i+1)*9 );
+		}
+		return strArr;
+	}
 
 	/**
 	 * Checks to see if the board is actually solved.

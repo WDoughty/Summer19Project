@@ -22,6 +22,10 @@ public class GeneratePuzzleTest {
         System.out.println(start);
         String end = board.makeString();
         System.out.println(end);
+        String[] lists = board.splitStringInLists(end);
+        for(int i =0; i<lists.length;i++){
+            System.out.println(lists[i]);
+        }
 
 
 
